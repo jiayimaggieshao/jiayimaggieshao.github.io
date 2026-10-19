@@ -13,7 +13,7 @@ title                    : "Jiayi (Maggie) Shao"
 title_separator          : "-"
 name                     : &name "Jiayi (Maggie) Shao"
 description              : &description "Academic website of Jiayi (Maggie) Shao, University of Washington"
-url                      : https://jiayimaggieshao.github.io
+url                      : "https://jiayimaggieshao.com"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "jiayimaggieshao/jiayimaggieshao.github.io"
 
