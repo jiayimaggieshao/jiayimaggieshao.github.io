@@ -11,6 +11,11 @@ author_profile: true
 
 {% include base_path %}
 
+{% assign publication_count = site.publications | size %}
+{% if publication_count == 0 %}
+<p>Publications will be added here.</p>
+{% endif %}
+
 <!-- New style rendering if publication categories are defined -->
 {% if site.publication_category %}
   {% for category in site.publication_category  %}
