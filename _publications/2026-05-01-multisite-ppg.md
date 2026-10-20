@@ -4,6 +4,7 @@ collection: publications
 category: conferences
 permalink: /publications/multisite-ppg/
 date: 2026-05-01
+priority: 1
 venue: "NeurIPS 2026 (Evaluations & Datasets Track)"
 status: "Accepted"
 image: multisite-ppg.png

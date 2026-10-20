@@ -1,7 +1,7 @@
 <article class="pub-entry">
   {% if post.image %}
   <a class="pub-entry__media" href="{{ post.arxiv | default: post.pdf | default: post.url }}">
-    <img class="pub-entry__thumb" src="{{ post.image | prepend: '/images/' | relative_url }}" alt="{{ post.title | escape }}" width="150" height="79">
+    <img class="pub-entry__thumb" src="{{ post.image | prepend: '/images/' | relative_url }}" alt="{{ post.title | escape }}" width="150">
   </a>
   {% endif %}
   <div class="pub-entry__main">
@@ -26,16 +26,19 @@
       {%- endfor -%}
     </p>
     {% endif %}
-    {% if post.venue or post.status %}
+    {% if post.venue or post.status or post.recognition %}
     <p class="pub-entry__venue">
       {% if post.venue %}<em>{{ post.venue }}</em>{% endif %}
       {% if post.status %}<span class="pub-entry__status">{{ post.status }}</span>{% endif %}
+      {% if post.recognition %}<span class="pub-entry__recognition">{{ post.recognition }}</span>{% endif %}
     </p>
     {% endif %}
-    {% if post.arxiv or post.pdf %}
+    {% if post.arxiv or post.pdf or post.code or post.project %}
     <p class="pub-entry__links">
       {% if post.arxiv %}<a href="{{ post.arxiv }}">ARXIV</a>{% endif %}
       {% if post.pdf %}<a href="{{ post.pdf }}">PDF</a>{% endif %}
+      {% if post.code %}<a href="{{ post.code }}">CODE</a>{% endif %}
+      {% if post.project %}<a href="{{ post.project }}">PROJECT</a>{% endif %}
     </p>
     {% endif %}
   </div>
