@@ -39,18 +39,25 @@
   border-bottom: 1px solid var(--global-border-color);
 }
 
+.pub-entry > * {
+  min-width: 0;
+}
+
 .pub-entry:first-child {
   padding-top: 0.15rem;
 }
 
 .pub-entry__media {
   display: block;
+  width: 150px;
+  max-width: 150px;
   line-height: 0;
 }
 
+.archive img.pub-entry__thumb,
 .pub-entry__thumb {
   width: 150px;
-  max-width: 100%;
+  max-width: 150px;
   height: auto;
   display: block;
   border-radius: 4px;
@@ -143,7 +150,10 @@
     gap: 0.75rem;
   }
 
+  .pub-entry__media,
+  .archive img.pub-entry__thumb,
   .pub-entry__thumb {
     width: 120px;
+    max-width: 120px;
   }
 }

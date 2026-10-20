@@ -1,7 +1,7 @@
 <article class="pub-entry">
   {% if post.image %}
   <a class="pub-entry__media" href="{{ post.arxiv | default: post.pdf | default: post.url }}">
-    <img class="pub-entry__thumb" src="{{ post.image | prepend: '/images/' | relative_url }}" alt="{{ post.title | escape }}">
+    <img class="pub-entry__thumb" src="{{ post.image | prepend: '/images/' | relative_url }}" alt="{{ post.title | escape }}" width="150" height="79">
   </a>
   {% endif %}
   <div class="pub-entry__main">
