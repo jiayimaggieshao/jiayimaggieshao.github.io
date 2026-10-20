@@ -1,4 +1,4 @@
-{% assign pub_link = post.arxiv | default: post.pdf | default: post.program | default: post.url %}
+{% assign pub_link = post.arxiv | default: post.pdf | default: post.program | default: post.doi | default: post.url %}
 <article class="pub-entry">
   {% if post.image %}
   <a class="pub-entry__media" href="{{ pub_link }}">
@@ -13,6 +13,8 @@
       <a href="{{ post.pdf }}">{{ post.title }}</a>
       {% elsif post.program %}
       <a href="{{ post.program }}">{{ post.title }}</a>
+      {% elsif post.doi %}
+      <a href="{{ post.doi }}">{{ post.title }}</a>
       {% else %}
       {{ post.title }}
       {% endif %}
@@ -46,13 +48,15 @@
       {% if post.recognition %}<span class="pub-entry__recognition">{{ post.recognition }}</span>{% endif %}
     </p>
     {% endif %}
-    {% if post.arxiv or post.pdf or post.code or post.project or post.program %}
+    {% if post.arxiv or post.pdf or post.code or post.project or post.program or post.doi or post.tutorial %}
     <p class="pub-entry__links">
       {% if post.arxiv %}<a href="{{ post.arxiv }}">ARXIV</a>{% endif %}
       {% if post.pdf %}<a href="{{ post.pdf }}">PDF</a>{% endif %}
       {% if post.code %}<a href="{{ post.code }}">CODE</a>{% endif %}
       {% if post.project %}<a href="{{ post.project }}">PROJECT</a>{% endif %}
       {% if post.program %}<a href="{{ post.program }}">UIST PROGRAM</a>{% endif %}
+      {% if post.doi %}<a href="{{ post.doi }}">DOI</a>{% endif %}
+      {% if post.tutorial %}<a href="{{ post.tutorial }}">TUTORIAL WEBSITE</a>{% endif %}
     </p>
     {% endif %}
   </div>
