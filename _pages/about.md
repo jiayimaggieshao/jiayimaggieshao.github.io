@@ -10,7 +10,7 @@ redirect_from:
 <div class="home-intro">
 <header class="home-intro__header">
 <h1 class="home-intro__name">Jiayi (Maggie) Shao</h1>
-<p class="home-intro__affiliation">UbiComp Lab, Electrical and Computer Engineering, University of Washington</p>
+<p class="home-intro__affiliation">Research Scientist/Engineer | UW CSE · UbiComp Lab</p>
 </header>
 <div class="home-intro__body">
 <div class="home-intro__aside">
