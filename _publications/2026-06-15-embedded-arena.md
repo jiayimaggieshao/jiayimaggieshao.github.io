@@ -5,7 +5,8 @@ category: conferences
 permalink: /publications/embedded-arena/
 date: 2026-06-15
 priority: 2
-venue: "NeurIPS 2026"
+venue: "NeurIPS 2026 (Main Track)"
+status: "Accepted"
 recognition: "Spotlight (Top 1.3%, 404 out of 30,709 submissions)"
 image: embedded-arena.png
 arxiv: https://arxiv.org/abs/2606.16190
@@ -28,5 +29,5 @@ authors:
   - name: "Shwetak Patel"
   - name: "Natasha Jaques"
   - name: "Vikram Iyer"
-citation: "Zhihan Zhang, Alexander Le Metzger, Jiuyang Lyu, Chun-Cheng Chang, Jiayi Shao, Yujia Liu, Emmanuel Azuh Mensah, Edward Wang, Kurtis Heimerl, Gregory D. Abowd, Shwetak Patel, Natasha Jaques, and Vikram Iyer. Embedded Arena: Iterative Optimization via Hardware Feedback. NeurIPS 2026."
+citation: "Zhihan Zhang, Alexander Le Metzger, Jiuyang Lyu, Chun-Cheng Chang, Jiayi Shao, Yujia Liu, Emmanuel Azuh Mensah, Edward Wang, Kurtis Heimerl, Gregory D. Abowd, Shwetak Patel, Natasha Jaques, and Vikram Iyer. Embedded Arena: Iterative Optimization via Hardware Feedback. NeurIPS 2026 (Main Track)."
 ---
