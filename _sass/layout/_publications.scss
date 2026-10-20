@@ -104,6 +104,27 @@
   line-height: 1.45;
 }
 
+.pub-entry__authors sup {
+  font-size: 0.75em;
+  line-height: 0;
+}
+
+.pub-entry__authors:has(+ .pub-entry__equal) {
+  margin-bottom: 0.12rem;
+}
+
+.pub-entry__equal {
+  margin: 0 0 0.4rem;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  opacity: 0.62;
+}
+
+.pub-entry__equal sup {
+  font-size: 0.85em;
+  line-height: 0;
+}
+
 .pub-entry__venue {
   margin: 0 0 0.55rem;
   font-size: 0.92rem;

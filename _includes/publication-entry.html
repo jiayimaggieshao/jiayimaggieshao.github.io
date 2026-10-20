@@ -18,9 +18,16 @@
       {% endif %}
     </h2>
     {% if post.authors %}
+    {% assign has_equal = false %}
+    {% for author in post.authors %}
+      {% if author.equal_contribution %}
+        {% assign has_equal = true %}
+      {% endif %}
+    {% endfor %}
     <p class="pub-entry__authors">
       {%- for author in post.authors -%}
         {%- if author.me -%}<strong>{{ author.name }}</strong>{%- else -%}{{ author.name }}{%- endif -%}
+        {%- if author.equal_contribution -%}<sup>†</sup>{%- endif -%}
         {%- unless forloop.last -%}
           {%- if forloop.rindex == 2 -%}
             {%- if post.authors.size > 2 -%}, and {% else %} and {% endif -%}
@@ -28,6 +35,9 @@
         {%- endunless -%}
       {%- endfor -%}
     </p>
+    {% if has_equal %}
+    <p class="pub-entry__equal"><sup>†</sup> Equal contribution</p>
+    {% endif %}
     {% endif %}
     {% if post.venue or post.status or post.recognition %}
     <p class="pub-entry__venue">
