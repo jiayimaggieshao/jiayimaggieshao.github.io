@@ -1,4 +1,16 @@
-/* Publication list. Scoped to .pub-list so other pages are unchanged. */
+/* Publication list. Scoped so Home, Research, and CV keep their layouts. */
+
+.archive:has(.pub-list) {
+  @include breakpoint($large) {
+    float: none;
+    width: 100%;
+    max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 
 .pub-list {
   margin-top: 0.5rem;
@@ -32,7 +44,7 @@
 
 .pub-entry {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
+  grid-template-columns: 240px minmax(0, 1fr);
   gap: 1rem 1.15rem;
   align-items: start;
   padding: 0.95rem 0 1.05rem;
@@ -49,15 +61,15 @@
 
 .pub-entry__media {
   display: block;
-  width: 150px;
-  max-width: 150px;
+  width: 240px;
+  max-width: 240px;
   line-height: 0;
 }
 
 .archive img.pub-entry__thumb,
 .pub-entry__thumb {
-  width: 150px;
-  max-width: 150px;
+  width: 100%;
+  max-width: 240px;
   height: auto;
   display: block;
   border-radius: 4px;
@@ -143,6 +155,7 @@
     grid-row: 1;
     margin-bottom: 0.35rem;
     font-size: 1.35rem;
+    text-align: right;
   }
 
   .pub-year__items {
@@ -151,14 +164,19 @@
   }
 
   .pub-entry {
-    grid-template-columns: 120px minmax(0, 1fr);
+    grid-template-columns: 148px minmax(0, 1fr);
     gap: 0.75rem;
   }
 
-  .pub-entry__media,
+  .pub-entry__media {
+    width: 148px;
+    max-width: 148px;
+  }
+
   .archive img.pub-entry__thumb,
   .pub-entry__thumb {
-    width: 120px;
-    max-width: 120px;
+    width: 100%;
+    max-width: 148px;
+    height: auto;
   }
 }
