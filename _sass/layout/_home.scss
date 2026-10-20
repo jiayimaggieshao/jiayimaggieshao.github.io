@@ -1,0 +1,99 @@
+/* Homepage intro only. Other pages keep the default sidebar layout. */
+
+.page:has(.home-intro) {
+  @include breakpoint($large) {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  > .page__inner-wrap > header {
+    display: none;
+  }
+}
+
+.home-intro {
+  max-width: 1040px;
+  margin: 0.5rem auto 1rem;
+}
+
+.home-intro__name {
+  margin: 0 0 0.4rem;
+  font-size: 2.35rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.home-intro__affiliation {
+  margin: 0;
+  max-width: 40rem;
+  color: var(--global-text-color);
+  opacity: 0.78;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.home-intro__links {
+  margin: 0.7rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.home-intro__links a {
+  text-decoration: none;
+}
+
+.home-intro__links a:hover {
+  text-decoration: underline;
+}
+
+.home-intro__dot {
+  margin: 0 0.45rem;
+  opacity: 0.55;
+}
+
+.home-intro__body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  margin-top: 1.75rem;
+}
+
+.home-intro__photo {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid var(--global-border-color);
+}
+
+.home-intro__text {
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.page__content .home-intro__text p {
+  margin: 0 0 1.15em;
+}
+
+.page__content .home-intro__text p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 760px) {
+  .home-intro__body {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 759px) {
+  .home-intro__name {
+    font-size: 2rem;
+  }
+}
