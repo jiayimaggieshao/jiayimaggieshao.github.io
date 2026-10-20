@@ -11,23 +11,41 @@ author_profile: true
 <p class="wordwrap">You can also find my articles on <a href="{{ site.author.googlescholar }}">my Google Scholar profile</a>.</p>
 {% endif %}
 
-{% assign by_date = site.publications | sort: "date" | reverse %}
 {% assign by_priority = site.publications | sort: "priority" %}
-{% if by_date.size == 0 %}
+{% assign year_blob = "" %}
+{% for item in site.publications %}
+  {% if item.year %}
+    {% assign y = item.year | append: "" %}
+  {% elsif item.date %}
+    {% assign y = item.date | date: "%Y" %}
+  {% else %}
+    {% assign y = "" %}
+  {% endif %}
+  {% if y != "" %}
+    {% assign year_token = "|" | append: y | append: "|" %}
+    {% unless year_blob contains year_token %}
+      {% assign year_blob = year_blob | append: year_token %}
+    {% endunless %}
+  {% endif %}
+{% endfor %}
+{% if year_blob == "" %}
 <p>Publications will be added here.</p>
 {% else %}
+{% assign years = year_blob | split: "|" | sort | reverse %}
 <div class="pub-list">
-{% assign seen_years = "|" %}
-{% for dated in by_date %}
-  {% assign year = dated.date | date: "%Y" %}
-  {% assign year_token = "|" | append: year | append: "|" %}
-  {% unless seen_years contains year_token %}
-    {% assign seen_years = seen_years | append: year | append: "|" %}
+{% for year in years %}
+  {% if year != "" %}
 <div class="pub-year">
 <div class="pub-year__label">{{ year }}</div>
 <div class="pub-year__items">
     {% for item in by_priority %}
-      {% assign item_year = item.date | date: "%Y" %}
+      {% if item.year %}
+        {% assign item_year = item.year | append: "" %}
+      {% elsif item.date %}
+        {% assign item_year = item.date | date: "%Y" %}
+      {% else %}
+        {% assign item_year = "" %}
+      {% endif %}
       {% if item_year == year %}
         {% assign post = item %}
         {% include publication-entry.html %}
@@ -35,7 +53,7 @@ author_profile: true
     {% endfor %}
 </div>
 </div>
-  {% endunless %}
+  {% endif %}
 {% endfor %}
 </div>
 {% endif %}
