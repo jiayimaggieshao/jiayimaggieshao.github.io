@@ -1,0 +1,43 @@
+<article class="pub-entry">
+  {% if post.image %}
+  <a class="pub-entry__media" href="{{ post.arxiv | default: post.pdf | default: post.url }}">
+    <img class="pub-entry__thumb" src="{{ post.image | prepend: '/images/' | relative_url }}" alt="{{ post.title | escape }}">
+  </a>
+  {% endif %}
+  <div class="pub-entry__main">
+    <h2 class="pub-entry__title">
+      {% if post.arxiv %}
+      <a href="{{ post.arxiv }}">{{ post.title }}</a>
+      {% elsif post.pdf %}
+      <a href="{{ post.pdf }}">{{ post.title }}</a>
+      {% else %}
+      {{ post.title }}
+      {% endif %}
+    </h2>
+    {% if post.authors %}
+    <p class="pub-entry__authors">
+      {% for author in post.authors %}
+        {% if author.me %}<strong>{{ author.name }}</strong>{% else %}{{ author.name }}{% endif %}
+        {% unless forloop.last %}
+          {% if forloop.rindex == 2 %}
+            {% if post.authors.size > 2 %}, and {% else %} and {% endif %}
+          {% else %}
+            , {% endif %}
+        {% endunless %}
+      {% endfor %}
+    </p>
+    {% endif %}
+    {% if post.venue or post.status %}
+    <p class="pub-entry__venue">
+      {% if post.venue %}<em>{{ post.venue }}</em>{% endif %}
+      {% if post.status %}<span class="pub-entry__status">{{ post.status }}</span>{% endif %}
+    </p>
+    {% endif %}
+    {% if post.arxiv or post.pdf %}
+    <p class="pub-entry__links">
+      {% if post.arxiv %}<a href="{{ post.arxiv }}">ARXIV</a>{% endif %}
+      {% if post.pdf %}<a href="{{ post.pdf }}">PDF</a>{% endif %}
+    </p>
+    {% endif %}
+  </div>
+</article>
