@@ -22,7 +22,7 @@ repository               : "jiayimaggieshao/jiayimaggieshao.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "website-profile.jpg"
+  avatar           : "jiayi-profile.jpg"
   name             : "Jiayi (Maggie) Shao"
   pronouns         : # example: "she/her"
   bio              : "UbiComp Lab, Electrical and Computer Engineering"

@@ -14,7 +14,7 @@ redirect_from:
 </header>
 <div class="home-intro__body">
 <div class="home-intro__aside">
-<img class="home-intro__photo" src="{{ '/images/website-profile.jpg' | relative_url }}" alt="Jiayi (Maggie) Shao" width="2400" height="2400">
+<img class="home-intro__photo" src="{{ '/images/jiayi-profile.jpg' | relative_url }}" alt="Jiayi (Maggie) Shao" width="2376" height="2376">
 <ul class="home-intro__contact">
 {% if site.author.location %}
 <li>
