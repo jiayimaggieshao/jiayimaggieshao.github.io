@@ -12,12 +12,9 @@ program: https://programs.sigchi.org/uist/2026/program/session/278204
 redirect_to: https://programs.sigchi.org/uist/2026/program/session/278204
 authors:
   - name: "Aarav Wadhwani"
-    equal_contribution: true
   - name: "Jiayi Shao"
     me: true
-    equal_contribution: true
   - name: "Rishabh L. Goenka"
-    equal_contribution: true
   - name: "Zhenyang Fu"
   - name: "Xiyuan Shen"
   - name: "Qiuyue (Shirley) Xue"
