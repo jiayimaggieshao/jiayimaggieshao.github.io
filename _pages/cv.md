@@ -9,33 +9,32 @@ redirect_from:
 
 {% include base_path %}
 
-A full CV will be posted here. Only details I can state directly are included below.
+<p><a class="btn btn--primary" href="{{ '/files/cv.pdf' | relative_url }}">Download CV</a></p>
 
-Education
-======
-* Master's background in Electrical and Computer Engineering
+<div class="cv-viewer">
+  <object class="cv-viewer__frame" data="{{ '/files/cv.pdf' | relative_url }}" type="application/pdf" aria-label="Curriculum vitae of Jiayi (Maggie) Shao">
+    <p><a href="{{ '/files/cv.pdf' | relative_url }}">Download CV</a></p>
+  </object>
+</div>
 
-Affiliation
-======
-* [UbiComp Lab](https://ubicomplab.cs.washington.edu/), University of Washington
+<style>
+  .cv-viewer {
+    margin-top: 1rem;
+  }
 
-Research interests
-======
-* Wearable and Ubiquitous Computing
-* On-device Machine Learning
-* Ultra-low-power and Battery-free Sensing
+  .cv-viewer__frame {
+    display: block;
+    width: 100%;
+    height: 80vh;
+    min-height: 32rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: 4px;
+  }
 
-Publications
-======
-{% assign publication_count = site.publications | size %}
-{% if publication_count == 0 %}
-Selected publications will be listed here. See also the [Publications](/publications/) page.
-{% else %}
-<ul>{% for post in site.publications reversed %}
-  {% include archive-single-cv.html %}
-{% endfor %}</ul>
-{% endif %}
-
-Experience, talks, teaching, and service
-======
-These sections will be added with the full CV.
+  @media (max-width: 700px) {
+    .cv-viewer__frame {
+      height: 70vh;
+      min-height: 24rem;
+    }
+  }
+</style>
